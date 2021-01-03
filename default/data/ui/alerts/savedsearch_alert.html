@@ -1,0 +1,5 @@
+<form class="form-horizontal form-complex">
+	<splunk-control-group label="Select saved-searches" help="Select Saved-Searches to run after the alert is triggered." >
+		<splunk-search-dropdown name="action.savedsearch_alert.param.savedsearch" search="| rest /services/saved/searches | fields title, id" label-field="title" value-field="id"/>
+	</splunk-control-group>
+</form>
