@@ -1,0 +1,18 @@
+<form class="form-horizontal form-complex">
+	<splunk-control-group label="Saved Searches" help="Input the names of the saved searches in the order you want them to be executed. (One per line)">
+		<splunk-text-area name="action.savedsearch_alert_list.param.savedsearches" id="savedsearch_alert_list_input" required></splunk-text-area>
+	</splunk-control-group>
+	<splunk-control-group label="Seperator" help="">
+		<splunk-radio-input name="action.savedsearch_alert_list.param.seperator" required>
+			<option value="comma">Comma (,)</option>
+			<option value="newline" selected>Newline (\n)</option>
+		</splunk-radio-input>
+	</splunk-control-group>
+	<splunk-control-group label="Exec Mode" help="If set to normal, runs an asynchronous search. If set to blocking, wait until the job is completed. ">
+		<splunk-radio-input name="action.savedsearch_alert_list.param.exec_mode" required>
+			<option value="normal" selected>Normal</option>
+			<option value="blocking">Blocking</option>
+		</splunk-radio-input>
+	</splunk-control-group>
+	
+</form>
