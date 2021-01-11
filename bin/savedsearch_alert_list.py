@@ -34,6 +34,7 @@ def main(data, logger=None):
 	splunk_service = SPLUNK_CLIENT.connect(token=session_key)
 	
 	# Could also be done using the actual seperator character as the <option> value ¯\_(ツ)_/¯
+	# Might raise Keyerror... catched in line 77
 	if seperator == "comma":
 		savedsearches = [splunk_service.saved_searches[ssn] for ssn in savedsearches_string.split(',')]
 	elif seperator == "newline":

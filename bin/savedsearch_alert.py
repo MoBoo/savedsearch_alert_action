@@ -29,7 +29,7 @@ def main(data, logger=None):
 	session_key = data.get('session_key')
 	config = data.get('configuration')
 	savedsearch_url = unquote(config.get('savedsearch'))
-	savedsearch_uri = savedsearch_url.split('/', 3)[-1]
+	savedsearch_uri = f"/{savedsearch_url.split('/', 3)[-1]}"  # prepend '/'
 	
 	splunk_service = SPLUNK_CLIENT.connect(token=session_key)
 	savedsearch = SPLUNK_CLIENT.SavedSearch(splunk_service, savedsearch_uri)
